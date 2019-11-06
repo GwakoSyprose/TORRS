@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://cdpn.io/stevn/fullembedgrid/jEZvXa?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - Tippy-tappy-typer</title>
+<style>
+  .var-highlight {
+  color: #C0AD60;
+}
+
+.string-highlight {
+  color: rgba(253, 149, 90, 0.8);
+}
+
+#typewriter {
+  font-size: 2em;
+  margin: 0;
+  font-family: "Courier New";
+}
+#typewriter:after {
+  content: "|";
+  -webkit-animation: blink 500ms linear infinite alternate;
+          animation: blink 500ms linear infinite alternate;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<pre id="typewriter"><span><span class="var-highlight">var</span></span> object = {
+    name: <span><span class="string-highlight">'Foo'</span></span>,
+    type: <span><span class="string-highlight">'Bar'</span></span>,
+    location: <span><span class="string-highlight">'Earth'</span></span>,
+    properties:[<span><span class="string-highlight">'Javascript'</span></span>,
+                <span><span class="string-highlight">'HTML'</span></span>,
+                <span><span class="string-highlight">'CSS'</span></span>];
+};</pre>
+<script src="./stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js.download"></script>
+<script id="rendered-js">
+      function setupTypewriter(t) {
+  var HTML = t.innerHTML;
+
+  t.innerHTML = "";
+
+  var cursorPosition = 0,
+  tag = "",
+  writingTag = false,
+  tagOpen = false,
+  typeSpeed = 100,
+  tempTypeSpeed = 0;
+
+  var type = function () {
+
+    if (writingTag === true) {
+      tag += HTML[cursorPosition];
+    }
+
+    if (HTML[cursorPosition] === "<") {
+      tempTypeSpeed = 0;
+      if (tagOpen) {
+        tagOpen = false;
+        writingTag = true;
+      } else {
+        tag = "";
+        tagOpen = true;
+        writingTag = true;
+        tag += HTML[cursorPosition];
+      }
+    }
+    if (!writingTag && tagOpen) {
+      tag.innerHTML += HTML[cursorPosition];
+    }
+    if (!writingTag && !tagOpen) {
+      if (HTML[cursorPosition] === " ") {
+        tempTypeSpeed = 0;
+      } else
+      {
+        tempTypeSpeed = Math.random() * typeSpeed + 50;
+      }
+      t.innerHTML += HTML[cursorPosition];
+    }
+    if (writingTag === true && HTML[cursorPosition] === ">") {
+      tempTypeSpeed = Math.random() * typeSpeed + 50;
+      writingTag = false;
+      if (tagOpen) {
+        var newSpan = document.createElement("span");
+        t.appendChild(newSpan);
+        newSpan.innerHTML = tag;
+        tag = newSpan.firstChild;
+      }
+    }
+
+    cursorPosition += 1;
+    if (cursorPosition < HTML.length - 1) {
+      setTimeout(type, tempTypeSpeed);
+    }
+
+  };
+
+  return {
+    type: type };
+
+}
+
+var typer = document.getElementById('typewriter');
+
+typewriter = setupTypewriter(typewriter);
+
+typewriter.type();
+      //# sourceURL=pen.js
+    </script>
+<script src="./css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js.download"></script>
+
+
+</body></html>
