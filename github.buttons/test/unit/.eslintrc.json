@@ -1,0 +1,14 @@
+{
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "globals": {
+    "expect": "readonly",
+    "sinon": "readonly"
+  },
+  "rules": {
+    "no-unused-expressions": 0,
+    "handle-callback-err": 0
+  }
+}

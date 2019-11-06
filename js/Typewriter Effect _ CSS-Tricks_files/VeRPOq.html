@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://cdpn.io/danielgroen/fullembedgrid/VeRPOq?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - CSS typewriter</title>
+<link href="./css(2)" rel="stylesheet" type="text/css">
+<style>
+  body {
+  background-color: #FF5A5A;
+  height: 100%;
+  font-family: 'tradegothiclt-bold', sans-serif;
+}
+
+h1 {
+  font-size: 5em;
+  color: white;
+  text-transform: uppercase;
+}
+
+span {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<h1>Wij zijn Occhio!<span aria-hidden="true"></span></h1>
+<script src="./stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js.download"></script>
+<script src="./jquery.min.js(1).download"></script>
+<script id="rendered-js">
+      document.addEventListener('DOMContentLoaded', function (event) {
+  // array with texts to type in typewriter
+  var dataText = ["Amsterdam.", "Full Service.", "Webdevelopment.", "Wij zijn Occhio!"];
+
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < text.length) {
+      // add next character to h1
+      document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function () {
+        typeWriter(text, i + 1, fnCallback);
+      }, 100);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+        // call callback after timeout
+        setTimeout(fnCallback, 700);
+      }
+  }
+  // start a typewriter animation for a text in the dataText array
+  function StartTextAnimation(i) {
+    if (typeof dataText[i] == 'undefined') {
+      setTimeout(function () {
+        StartTextAnimation(0);
+      }, 20000);
+    }
+    // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+      typeWriter(dataText[i], 0, function () {
+        // after callback (and whole text has been animated), start next text
+        StartTextAnimation(i + 1);
+      });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+      //# sourceURL=pen.js
+    </script>
+<script src="./css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js.download"></script>
+
+
+</body></html>

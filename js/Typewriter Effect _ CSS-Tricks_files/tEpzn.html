@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://cdpn.io/gavra/fullembedgrid/tEpzn?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+<title>CodePen - typewriter</title>
+<style>
+  body {
+  font-family: 'Waiting for the Sunrise', cursive; 
+  font-size:30px; 
+  margin: 10px 50px; 
+  letter-spacing: 6px; 
+  font-weight: bold;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<link href="./css(1)" rel="stylesheet" type="text/css">
+
+<div id="typedtext"> There are only 10 types of people in the world:<br>Those who understand binary, and those who don't_</div>
+
+<script src="./stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js.download"></script>
+<script id="rendered-js">
+      // set up text to print, each item in array is new line
+var aText = new Array(
+"There are only 10 types of people in the world:",
+"Those who understand binary, and those who don't");
+
+var iSpeed = 100; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+
+function typewriter()
+{
+  sContents = ' ';
+  iRow = Math.max(0, iIndex - iScrollAt);
+  var destination = document.getElementById("typedtext");
+
+  while (iRow < iIndex) {if (window.CP.shouldStopExecution(0)) break;
+    sContents += aText[iRow++] + '<br />';
+  }window.CP.exitedLoop(0);
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+  if (iTextPos++ == iArrLength) {
+    iTextPos = 0;
+    iIndex++;
+    if (iIndex != aText.length) {
+      iArrLength = aText[iIndex].length;
+      setTimeout("typewriter()", 500);
+    }
+  } else {
+    setTimeout("typewriter()", iSpeed);
+  }
+}
+
+
+typewriter();
+      //# sourceURL=pen.js
+    </script>
+<script src="./css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js.download"></script>
+
+
+</body></html>
