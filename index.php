@@ -22,7 +22,10 @@ if(isset($_POST['submit'])) {
     $result = mysqli_query($link, $sql);
     $resultCheck = mysqli_num_rows($result);
     if ($resultCheck == 0) {
-      $userID_error= "Invalid National ID!";
+     echo '<div class="alert alert-danger alert-dismissable" id="flash-msg">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <h4><i class="icon fa fa-times"></i>That National ID does not exist!</h4>
+      </div>';
 
     } else {
       if($row = mysqli_fetch_assoc($result)) {
@@ -42,7 +45,11 @@ if(isset($_POST['submit'])) {
              }
         
         } else {
-            $pass_error= "Wrong password!";
+            
+            echo '<div class="alert alert-danger alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h4><i class="icon fa fa-check"></i>wrong password!</h4>
+</div>';
              
 
         }
@@ -68,7 +75,10 @@ if(isset($_POST['notSubmit'])){
 
  
     mysqli_query($link, $sql);
-  
+  echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h4><i class="icon fa fa-check"></i>Incident Reported successfully!</h4>
+</div>';
 }
 
 ?>
@@ -252,7 +262,11 @@ if(isset($_POST['notSubmit'])){
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/wow.js"></script>
     <script src="js/custom.js"></script>
-    <!--  <script src="contactform/contactform.js"></script> -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("#flash-msg").delay(2000).fadeOut("slow");
+    });
+    </script>
 
 </body>
 
