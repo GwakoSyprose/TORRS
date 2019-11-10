@@ -74,7 +74,7 @@ if(array_key_exists("submit" , $_POST)) {
 
      
 
-         $query = "INSERT INTO drivers(`driverID`, `fname`,`lname`, `licence`, `typeID`, `offenceCount`, `profileImage`,`regDate`)
+         $query = "INSERT INTO drivers(`driverID`, `dfname`,`dlname`, `licence`, `typeID`, `offenceCount`, `profileImage`,`regDate`)
             VALUES ('$driverID', '$fname', '$lname','$licence', '$type', '0','$profile',  '$date')";
        
 

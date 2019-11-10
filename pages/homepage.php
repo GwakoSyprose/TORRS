@@ -5,16 +5,16 @@ include('../includes/connection.php');
  $querypsv=mysqli_query($link, "SELECT * FROM drivers WHERE typeID= 1");
     $psvno= mysqli_num_rows($querypsv);
 //getting the number of motorcycles
- $querymotor=mysqli_query($link, "SELECT * FROM drivers WHERE typeid='4'");
+ $querymotor=mysqli_query($link, "SELECT * FROM drivers WHERE typeID=4");
     $motorno= mysqli_num_rows($querymotor);
 //getting the number of personal cars
- $querycar=mysqli_query($link, "SELECT * FROM drivers WHERE typeid='2'");
+ $querycar=mysqli_query($link, "SELECT * FROM drivers WHERE typeID=2");
     $carno= mysqli_num_rows($querycar);
 //getting the number of organizations
- $queryorg=mysqli_query($link, "SELECT * FROM drivers WHERE typeid='3'");
+ $queryorg=mysqli_query($link, "SELECT * FROM drivers WHERE typeID=3");
     $orgno= mysqli_num_rows($queryorg);
 //getting the number of trucks
- $querytruck=mysqli_query($link, "SELECT * FROM drivers WHERE typeid='5'");
+ $querytruck=mysqli_query($link, "SELECT * FROM drivers WHERE typeID=5");
     $truckno= mysqli_num_rows($querytruck);
 
 //getting the number of active drivers
@@ -78,7 +78,7 @@ $lastnameTruck = $rowt['dlname'];
     <div class="container-fluid">
         <div class="row">
 
-            <?php include $_SERVER['DOCUMENT_ROOT'] . '/TORS1/includes/sidenav.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/sidenav.php'; ?>
 
             <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
 
@@ -101,17 +101,17 @@ $lastnameTruck = $rowt['dlname'];
                     <!-- Small Stats Blocks -->
                     <div class="row">
 
-                        <div class="col-lg col-md-6 col-sm-6 mb-4">
-                            <div class="stats-small stats-small--1 card card-small" style="background: #00b26f;">
+                        <div class="col-lg col-md-4 col-sm-12 mb-4">
+                            <div class="stats-small stats-small--1 card card-small" style="background: linear-gradient(to bottom, #00ff9d 0%, #ff99cc 100%);">
                                 <div class="card-body p-0 d-flex">
                                     <div class="d-flex flex-column m-auto">
                                         <div class="stats-small__data text-center">
                                             <span class="stats-small__label ">
-                                                <h6>PSVs</h6>
-                                            </span>
+                                                <h6 id="labels">PSVs</h6>
+                                            </s #00cc7epan>
                                             <span> <i class='fas fa-shuttle-van' style='font-size:36px'></i></span>
                                             <h6 class="stats-small__value count my-3"><?php echo $psvno ?></h6>
-                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap;"><b>Top Offender:</b><?= $firstnamePSV; ?> <?= $lastnamePSV;?></span>
+                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap;"><b>Top Offender:</b><?= $firstnamePSV; ?> <?= $lastnamePSV; ?> </span>
                                         </div>
 
                                     </div>
@@ -119,35 +119,18 @@ $lastnameTruck = $rowt['dlname'];
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg col-md-6 col-sm-6 mb-4">
-                            <div class="stats-small stats-small--1 card card-small" style="background:#ff8300; color: #666;">
+                          <div class="col-lg col-md-4 col-sm-12 mb-4">
+                            <div class="stats-small stats-small--1 card card-small" style="background: linear-gradient(to bottom, #ff8300 0%, #ff99cc 100%);">
+                                
                                 <div class="card-body p-0 d-flex">
                                     <div class="d-flex flex-column m-auto">
                                         <div class="stats-small__data text-center">
                                             <span class="stats-small__label ">
-                                                <h6>MOTORCYLES</h6>
-                                            </span>
-                                            <span> <i class='fas fa-motorcycle' style='font-size:36px'></i></span>
-                                            <h6 class="stats-small__value count my-3"><?php echo $motorno ?></h6>
-                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap;"><b>Top Offender:</b><?= $firstnameMotor; ?> <?= $lastnameMotor; ?></span>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg col-md-4 col-sm-6 mb-4">
-                            <div class="stats-small stats-small--1 card card-small">
-                                <div class="card-body p-0 d-flex">
-                                    <div class="d-flex flex-column m-auto">
-                                        <div class="stats-small__data text-center">
-                                            <span class="stats-small__label ">
-                                                <h6>PERSONAL CARS</h6>
-                                            </span>
+                                                <h6 id="labels">PERSONALS</h6>
+                                            </s #00cc7epan>
                                             <span> <i class='fas fa-car' style='font-size:36px'></i></span>
                                             <h6 class="stats-small__value count my-3"><?php echo $carno ?></h6>
-                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap; "><b>Top Offender:</b> <?= $firstnamePersonal; ?> <?= $lastnamePersonal; ?></span>
+                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap;"><b>Top Offender:</b><?= $firstnamePersonal; ?> <?= $lastnamePersonal; ?> </span>
                                         </div>
 
                                     </div>
@@ -155,17 +138,17 @@ $lastnameTruck = $rowt['dlname'];
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg col-md-4 col-sm-6 mb-4">
-                            <div class="stats-small stats-small--1 card card-small">
+                           <div class="col-lg col-md-4 col-sm-12 mb-4">
+                            <div class="stats-small stats-small--1 card card-small" style="background: linear-gradient(to bottom, #00b5e9 0%, #ff99cc 100%);">
                                 <div class="card-body p-0 d-flex">
                                     <div class="d-flex flex-column m-auto">
                                         <div class="stats-small__data text-center">
                                             <span class="stats-small__label ">
-                                                <h6>ORGANIZATIONS</h6>
-                                            </span>
+                                                <h6 id="labels">ORGANIZATIONS</h6>
+                                            </s #00cc7epan>
                                             <span> <i class='fas fa-ambulance' style='font-size:36px'></i></span>
                                             <h6 class="stats-small__value count my-3"><?php echo $orgno ?></h6>
-                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap; "><b>Top Offender:</b> <?= $firstnameOrg; ?> <?= $lastnameOrg; ?></span>
+                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap;"><b>Top Offender:</b><?= $firstnameOrg; ?> <?= $lastnameOrg; ?> </span>
                                         </div>
 
                                     </div>
@@ -173,14 +156,33 @@ $lastnameTruck = $rowt['dlname'];
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg col-md-4 col-sm-12 mb-4">
-                            <div class="stats-small stats-small--1 card card-small">
+                       <div class="col-lg col-md-4 col-sm-12 mb-4">
+                            <div class="stats-small stats-small--1 card card-small" style="background: linear-gradient(to bottom, #ba55d3 0%, #ff99cc 100%);">
                                 <div class="card-body p-0 d-flex">
                                     <div class="d-flex flex-column m-auto">
                                         <div class="stats-small__data text-center">
                                             <span class="stats-small__label ">
-                                                <h6>TRUCKS</h6>
-                                            </span>
+                                                <h6 id="labels">MOTORCYLCLES</h6>
+                                            </s #00cc7epan>
+                                            <span> <i class='fas fa-motorcycle' style='font-size:36px'></i></span>
+                                            <h6 class="stats-small__value count my-3"><?php echo $motorno ?></h6>
+                                            <span style="font-weight:450; overflow: hidden; white-space: nowrap;"><b>Top Offender:</b><?= $firstnameMotor; ?> <?= $lastnameMotor; ?> </span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg col-md-4 col-sm-12 mb-4">
+                            <div class="stats-small stats-small--1 card card-small" style="background: linear-gradient(to bottom, #fa4251 0%, #ff99cc 100%);">
+                                <div class="card-body p-0 d-flex">
+                                    <div class="d-flex flex-column m-auto">
+                                        <div class="stats-small__data text-center">
+                                            <span class="stats-small__label ">
+                                                <h6 id="labels">TRUCKS</h6>
+                                            </s #00cc7epan>
                                             <span> <i class='fas fa-truck' style='font-size:36px'></i></span>
                                             <h6 class="stats-small__value count my-3"><?php echo $truckno ?></h6>
                                             <span style="font-weight:450; overflow: hidden; white-space: nowrap;"><b>Top Offender:</b><?= $firstnameTruck; ?> <?= $lastnameTruck; ?> </span>
@@ -481,11 +483,11 @@ $lastnameTruck = $rowt['dlname'];
                                     hoverBorderColor: '#ffffff',
                                     data: [<?php echo $psvno;?>, <?php echo $motorno;?>, <?php echo $orgno;?>, <?php echo $truckno;?>, <?php echo $carno;?>],
                                     backgroundColor: [
-                                        'rgba(0,123,255,0.9)',
-                                        'rgba(0,123,255,0.7)',
-                                        'rgba(0,123,255,0.5)',
-                                        'rgba(0,123,255,0.3)',
-                                        'rgba(0,123,255,0.1)'
+                                        '#00ff9d',
+                                        '#ff8300',
+                                        '#00b5e9',
+                                        '#fa4251',
+                                        '#BA55D3'
                                     ]
                                 }],
                                 labels: ["PSVs", "Motorcycles", "Organizations", "Trucks", "Personal Cars"]

@@ -4438,7 +4438,8 @@ a.text-accent:hover, a.text-accent:focus {
   .stats-small--1 .stats-small__value {
     font-size: 2.0625rem; }
   .stats-small--1 .stats-small__label {
-    font-size: 0.75rem; }
+    font-size: 0.75rem;
+    color: #0000 }
   .stats-small--1 .stats-small__percentage {
     font-size: 0.75rem; }
   .stats-small--1 canvas {
