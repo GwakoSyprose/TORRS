@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/TORS1/includes/head.php';
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/head.php';
 include('../includes/connection.php');
 
 //getting the number of psvs
