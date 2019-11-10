@@ -21,7 +21,7 @@ include('../includes/connection.php');
 $queryactive=mysqli_query($link, "SELECT * FROM drivers WHERE status=0");
     $activeno= mysqli_num_rows($queryactive);
 //getting the number of suspended drivers
- $querysus=mysqli_query($link, "SELECT * FROM drivers WHERE typeid=1");
+ $querysus=mysqli_query($link, "SELECT * FROM drivers WHERE status=1");
     $susno= mysqli_num_rows($querysus);
 
 //getting the top offender PSV
