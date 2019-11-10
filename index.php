@@ -32,11 +32,11 @@ if(isset($_POST['submit'])) {
           //De-hashing the password!
         if(password_verify($password, $row['password'])){
     
-            $_SESSION['userID'] = $row['userID'];
-          $_SESSION['fname'] = $row['fname'];
-            $_SESSION['lname'] = $row['lname'];
-             $_SESSION['domain'] = $row['domain'];
-              $_SESSION['region'] = $row['region'];
+                    $_SESSION['userID'] = $row['userID'];
+                    $_SESSION['fname'] = $row['fname'];
+                    $_SESSION['lname'] = $row['lname'];
+                    $_SESSION['domain'] = $row['domain'];
+                    $_SESSION['region'] = $row['region'];
              if( $_SESSION['domain'] == 1) {
                   header("Location: pages/adminhome.php?loggedIn=".$_SESSION['userID']);
              }elseif ($_SESSION['domain'] == 0)
@@ -48,8 +48,9 @@ if(isset($_POST['submit'])) {
             
             echo '<div class="alert alert-danger alert-dismissable" id="flash-msg">
 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-<h4><i class="icon fa fa-check"></i>wrong password!</h4>
+<h4><i class="icon fa fa-times"></i>wrong password!</h4>
 </div>';
+echo mysqli_error($link);
              
 
         }
@@ -142,6 +143,9 @@ if(isset($_POST['notSubmit'])){
                                             <form method="post"
                                                 action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                                                 <div class="form-group">
+                                                    <!-- <div class="form-control">
+            <?php echo $userID_error; ?>    
+        </div> -->
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i
                                                                 class="fa fa-user"></i></span>
@@ -150,6 +154,9 @@ if(isset($_POST['notSubmit'])){
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <!--  <div class="form-control">
+            <?php echo $pass_error; ?>    
+        </div> -->
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i
                                                                 class="fa fa-lock"></i></span>
