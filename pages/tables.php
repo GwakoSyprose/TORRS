@@ -33,10 +33,12 @@ include  ('../includes/connection.php');
 
                     <ul class="nav nav-tabs" id="activeTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="activeTab" data-toggle="tab" href="#active" role="tab" aria-controls="home" aria-selected="true">Active</a>
+                            <a class="nav-link active" id="activeTab" data-toggle="tab" href="#active" role="tab"
+                                aria-controls="home" aria-selected="true">Active</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="suspendedTab" data-toggle="tab" href="#suspended" role="tab" aria-controls="profile" aria-selected="false">Suspended</a>
+                            <a class="nav-link" id="suspendedTab" data-toggle="tab" href="#suspended" role="tab"
+                                aria-controls="profile" aria-selected="false">Suspended</a>
                         </li>
 
                     </ul>
@@ -91,16 +93,20 @@ include  ('../includes/connection.php');
 
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="Send">
                                                             <i class="zmdi zmdi-mail-send"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="More">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
                                                     </div>
@@ -165,16 +171,20 @@ include  ('../includes/connection.php');
 
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="Send">
                                                             <i class="zmdi zmdi-mail-send"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                            title="More">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
                                                     </div>
@@ -200,22 +210,20 @@ include  ('../includes/connection.php');
 
                     </div>
                     <script type="text/javascript">
-                        $(document).ready(function() {
-                            $('#active_drivers').DataTable();
-                            $('#sus_drivers').DataTable();
+                    $(document).ready(function() {
+                        $('#active_drivers').DataTable();
+                        $('#sus_drivers').DataTable();
 
-                        });
-
+                    });
                     </script>
 
 
                     <script>
-                        jQuery(document).ready(function($) {
-                            $('*[data-href]').on('click', function() {
-                                window.location = $(this).data("href");
-                            });
+                    jQuery(document).ready(function($) {
+                        $('*[data-href]').on('click', function() {
+                            window.location = $(this).data("href");
                         });
-
+                    });
                     </script>
                     <?php 
     include '../includes/footer.php'; 
