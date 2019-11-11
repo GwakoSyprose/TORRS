@@ -25,7 +25,18 @@ include  ('../includes/connection.php');
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                             <span class="text-uppercase page-subtitle">Overview</span>
-                            <h3 class="page-title">Data Tables</h3>
+                            <h6 class="page-title"><?php 
+                            if($typeid==1){
+                                echo "PSV";
+                            }elseif($typeid==2){
+                                echo "PERSONAL VEHICLES";
+                            }elseif($typeid==3){
+                                echo "ORGANIZATIONS";
+                            }elseif($typeid==4){
+                                echo "MOTORCYCLES";
+                            }elseif($typeid==5){
+                                echo "TRUCKS";
+                            }?> </h6>
 
                         </div>
                     </div>
