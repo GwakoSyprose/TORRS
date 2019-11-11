@@ -29,12 +29,12 @@ $pquery=$link->query($sql);
               <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search">
           </div>
       </form>
-      <div class="nav-wrapper" style="background-image: url('images/bg.png');">
+      <div class="nav-wrapper" style="background-color:#262626">
           <ul class="nav flex-column" style="border: none;">
               <li class="nav-item text-center "style="background-color: transparent;">
                   <a class="nav-link text-white" href="homepage.php">
 
-                      <h6 style="color:black;">DASHBOARD</h6>
+                      <h6 style="color:white;">DASHBOARD</h6>
 
                   </a>
               </li>
