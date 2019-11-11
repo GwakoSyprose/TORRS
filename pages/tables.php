@@ -62,9 +62,9 @@ include  ('../includes/connection.php');
                                                 <th>Last Name</th>
                                                 <th>Licence No</th>
                                                 <th>Offence Count</th>
-
                                                 <th>Registration Date</th>
-                                                <th></th>
+                                                <th>Actions</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -204,7 +204,6 @@ include  ('../includes/connection.php');
 
 
                         </div>
-
 
                         <!-- End Page Header -->
 

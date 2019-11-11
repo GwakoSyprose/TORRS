@@ -5,7 +5,6 @@
 .main-sidebar .nav .nav-item .nav-link {
     border-bottom: 0px;
     background-color: transparent;
-}
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {

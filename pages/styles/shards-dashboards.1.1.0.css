@@ -55,6 +55,10 @@ body {
 
 a {
   color: #007bff;
+<<<<<<< HEAD
+=======
+  font-weight: 500;
+>>>>>>> origin/master
   text-decoration: none; }
   a:hover {
     color: #0056b3;
