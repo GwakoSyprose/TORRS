@@ -2,12 +2,21 @@
 include  ('../includes/connection.php');
 include  ('../includes/head.php');
 
-
+require 'officer_name.php';
 $region = $_SESSION['region'];
+$id =$_SESSION['userID'];
 
 
 $query=mysqli_query($link, "SELECT * FROM notifications WHERE region='$region'");
- 
+ if (isset($_GET['respond'])) {
+     $notID = $_GET['respond'];
+     $sql= "UPDATE notifications SET `status` = '$id' WHERE notificationID= '$notID'";
+     if ($link->query($sql) === TRUE) {
+        header("Location: notifications.php");
+    } else {
+      echo "Error updating record: " . $link->error;
+    }
+ }
 
 ?>
 
@@ -33,13 +42,13 @@ $query=mysqli_query($link, "SELECT * FROM notifications WHERE region='$region'")
                     <div class="col-lg-12">
                         <div class="card card-small mb-4">
                             <div class="card-header border-bottom">
-                                <h6 class="m-0">Account Details</h6>
+                                <h6 class="m-0">Nots Details</h6>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item p-3">
                                     <div class="row">
                                         <div class="col">
-                                            <h6 class="font-weight-bold text-center">Personal Details</h6>
+                                            <h6 class="font-weight-bold text-center">Notifications List</h6>
                                             <ul>
                                                 <table class="table table-striped">
                                                     <thead>
@@ -48,12 +57,15 @@ $query=mysqli_query($link, "SELECT * FROM notifications WHERE region='$region'")
                                                             <th scope="col">Number Plates</th>
                                                             <th scope="col">Description</th>
                                                             <th scope="col">Phone Number</th>
+                                                            <th scope="col">Action</th>
 
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php
                    while($result = mysqli_fetch_assoc($query)) :
+                             $notfID=$result['notificationID'];
+                             $status=$result['status'];
                             $numPlate=$result['numPlate'];
                             $description=$result['description'];
                             $phone=$result['phone'];
@@ -65,6 +77,11 @@ $query=mysqli_query($link, "SELECT * FROM notifications WHERE region='$region'")
                                                             <td><?php echo $numPlate; ?></td>
                                                             <td><?php echo  $description;?></td>
                                                             <td><?php echo $phone; ?></td>
+                                                            <td><a  href="?respond=<?= $notfID;?>">                                                          
+                                                            <?=(($status == 0)?'Respond':''.getName($status));?>
+                                                            </a></td>
+
+
 
 
                                                         </tr>

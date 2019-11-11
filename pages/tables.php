@@ -62,9 +62,9 @@ include  ('../includes/connection.php');
                                                 <th>Last Name</th>
                                                 <th>Licence No</th>
                                                 <th>Offence Count</th>
-
                                                 <th>Registration Date</th>
-                                                <th></th>
+                                                <th>Actions</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -78,7 +78,7 @@ include  ('../includes/connection.php');
                             $count=$result['offenceCount'];
                             $date=$result['regDate'];
                         ?>
-                                            <tr class="spacer"></tr>
+                                            <!-- <tr class="spacer"></tr> -->
                                             <tr class="tr-shadow" data-href="viewdriver.php?pid=<?=$id; ?>">
 
                                                 <td id="id"><?php echo $id; ?></td>

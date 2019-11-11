@@ -1,10 +1,11 @@
 <?php 
-    include $_SERVER['DOCUMENT_ROOT'] . '/TORS2/includes/connection.php'; 
+    include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/connection.php'; 
 
-    include $_SERVER['DOCUMENT_ROOT'] . '/TORS2/includes/adminsidenav.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/adminsidenav.php';
 
     include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/head.php'; 
-    include $_SERVER['DOCUMENT_ROOT'] . '/TORS2/includes/navbar.php';
+    require '../checkadmin.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/navbar.php';
 
 if (isset ($_POST['submit'])) {
 

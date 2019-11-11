@@ -1,4 +1,8 @@
-<?php include ('../includes/head.php');
+
+<?php 
+
+include ('../includes/head.php');
+require '../checkadmin.php';
 
       include ('../includes/connection.php');
 

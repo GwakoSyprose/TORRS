@@ -87,26 +87,33 @@ if($error!=""){
 
 if(isset($_POST["email"]) && isset($_POST["action"]) && ($_POST["action"]=="update")){
 $error="";
+$mail = $_POST["email"];
 $pass1 = mysqli_real_escape_string($link,$_POST["pass1"]);
 $pass2 = mysqli_real_escape_string($link,$_POST["pass2"]);
 $email = $_POST["email"];
-$curDate = date("Y-m-d H:i:s");
+
 if ($pass1!=$pass2){
     $error .= "<p>Password do not match, both password should be same.<br /><br /></p>";
     }
   if($error!=""){
     echo "<div class='error'>".$error."</div><br />";
     }else{
-
-$pass1 = md5($pass1);
 $hashedPass1 = password_hash($pass1, PASSWORD_DEFAULT);
-mysqli_query($link,
-"UPDATE `users` SET `password`='".$hashedPass1."' WHERE `email`='".$email."';"); 
+$sql = "UPDATE `users` SET `password`='".$hashedPass1."' WHERE `email`='".$mail."';";
 
-mysqli_query($link, "DELETE FROM `password_reset_temp` WHERE `email`='".$email."';");   
+//mysqli_query($link,$sql); 
+if ($link->query($sql) === TRUE) {
+  
+} else {
+  echo "Error updating record: " . $link->error;
+}
+
+
+mysqli_query($link, "DELETE FROM `password_reset_temp` WHERE `email`='".$mail."';");   
   
 echo '<div class="alert alert-success"><p>Congratulations! Your password has been updated successfully.</p>
-<p><a href="http://'.$_SERVER['SERVER_NAME'].':8080/TORS2/index.php">Click here</a> to Login.</p></div><br />';
+<p><a href="http://'.$_SERVER['SERVER_NAME'].':8080/TORS/index.php">Click here</a> to Login.</p></div><br />';
+
     }   
 }
 ?>
