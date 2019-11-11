@@ -15,7 +15,7 @@
     .table-responsive-data2 {
         overflow: visible;
     }
-
+}
     .table-data2 .spacer {
         height: 5px;
         background: transparent;
@@ -51,5 +51,173 @@
         background: #e5e5e5;
         margin-right: 5px;
     }
-
+    .table-style1 .table tr td:last-child {
+        padding-right: 30px;
+    }
+    .table-data2 {
+        border-collapse: collapse;
+        overflow: visible;
+    }
+    
+    .table-data2.table thead th {
+        font-size: 12px;
+        color: #555;
+        text-transform: uppercase;
+        border: none;
+        font-weight: 600;
+        vertical-align: top;
+        padding: 15px 40px;
+        padding-right: 10px;
+    }
+    
+    .table-data2.table thead th:first-child {
+        padding-right: 0;
+    }
+    
+    .table-data2.table tbody {
+        background: #fff;
+    }
+    
+    .table-data2.table tbody tr td:first-child {
+        -webkit-border-top-left-radius: 3px;
+        -moz-border-radius-topleft: 3px;
+        border-top-left-radius: 3px;
+        -webkit-border-bottom-left-radius: 3px;
+        -moz-border-radius-bottomleft: 3px;
+        border-bottom-left-radius: 3px;
+        vertical-align: top;
+    }
+    
+    .table-data2.table tbody tr td:first-child .au-checkbox {
+        margin-top: 5px;
+    }
+    
+    @media (max-width: 1199px) {
+        .table-data2.table tbody tr td:first-child {
+            vertical-align: middle;
+        }
+    
+        .table-data2.table tbody tr td:first-child .au-checkbox {
+            margin-top: 0;
+        }
+    }
+    
+    .table-data2.table tbody tr td:last-child {
+        -webkit-border-top-right-radius: 3px;
+        -moz-border-radius-topright: 3px;
+        border-top-right-radius: 3px;
+        -webkit-border-bottom-right-radius: 3px;
+        -moz-border-radius-bottomright: 3px;
+        border-bottom-right-radius: 3px;
+        padding-right: 35px;
+    }
+    
+    .table-data2.table tbody td {
+        font-size: 14px;
+        color: #808080;
+        vertical-align: middle;
+        padding: 25px 40px;
+        padding-right: 10px;
+        border: none;
+    }
+    
+    .table-data2.table tbody td.desc {
+        color: #4272d7;
+    }
+    
+    .table-data2 .spacer {
+        height: 5px;
+        background: transparent;
+    }
+    
+    .tr-shadow {
+        -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+        -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+    }
+    
+    .table-data__tool {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-bottom: 28px;
+    }
+    
+    .table-data__tool .table-data__tool-left > div {
+        margin-right: 12px;
+    }
+    
+    .table-data__tool .table-data__tool-right > button {
+        margin-right: 12px;
+    }
+        
+    .table-data3 thead {
+    background: #333;
 }
+
+.table-data3 thead tr th {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 18px 40px;
+    padding-right: 10px;
+}
+
+.table-data3 thead tr th:first-child {
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    border-top-left-radius: 3px;
+}
+
+.table-data3 thead tr th:last-child {
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-right-radius: 3px;
+}
+
+.table-data3 thead tr th:last-child {
+    text-align: right;
+    padding-right: 50px;
+}
+.table-data3 tbody tr td:last-child {
+    text-align: right;
+    padding-right: 50px;
+}
+.table-data3 tbody tr:last-child td:first-child {
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.table-data3 tbody tr:last-child td:last-child {
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.table-data3 tbody td {
+    border-bottom: 1px solid #f5f5f5;
+    background: #fff;
+    font-size: 14px;
+    color: #808080;
+    padding: 12px 40px;
+    padding-right: 10px;
+}
+
+.table-data3 tbody td.process {
+    color: #00ad5f;
+}
+
+.table-data3 tbody td.denied {
+    color: #fa4251;
+}
+
+

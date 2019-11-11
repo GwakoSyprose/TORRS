@@ -12,6 +12,11 @@ if(isset($_POST['submit'])){
     mysqli_query($link, $query);
     
 } 
+$sql=mysqli_query($link,"SELECT * FROM users WHERE userID= $id");
+$result=mysqli_fetch_assoc($sql);
+
+
+
 ?>
 
 <body class="h-100">
@@ -30,12 +35,7 @@ if(isset($_POST['submit'])){
                     <?php include '../includes/navbar.php'; ?>
                 </div>
                 <!-- / .main-navbar -->
-                <div class="alert alert-success alert-dismissible fade show mb-0 col-md-6" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    <i class="fa fa-times mx-2"></i>
-                    <strong>Success!</strong> Your profile has been updated! </div>
+               
                 <div class="main-content-container container-fluid px-4">
                     <!-- Page Header -->
                     <div class="page-header row no-gutters py-4">
@@ -52,10 +52,9 @@ if(isset($_POST['submit'])){
                                 <div class="card-header border-bottom text-center">
                                     <div class="mb-3 mx-auto">
                                         <img class="rounded-circle" src="images/cop.png" alt="User Avatar" width="110"> </div>
-                                    <h4 class="mb-0">Sabeti Chebet</h4>
-                                    <span class="text-muted d-block mb-2">Project Manager</span>
-                                    <button type="button" class="mb-2 btn btn-sm btn-pill btn-outline-primary mr-2">
-                                        <i class="material-icons mr-1">person_add</i>Follow</button>
+                                    <h4 class="mb-0"><?= $result['fname']; ?> <?= $result['lname']; ?></h4>
+                                    <span class="text-muted d-block mb-2">Officer</span>
+                                    
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item px-4">
