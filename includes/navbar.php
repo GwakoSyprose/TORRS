@@ -18,8 +18,7 @@
                       <span class="badge badge-pill badge-danger count"></span>
                     </div>
                   </a>
-                  <div class="dropdown-menu dropdown-menu-small not-menu" aria-labelledby="dropdownMenuLink">
-                   
+                  <div class="dropdown-menu dropdown-menu-small not-menu" aria-labelledby="dropdownMenuLink">                 
                   
                     <a class="dropdown-item notification__all text-center" href="#"> View all Notifications </a> 
                   </div>
