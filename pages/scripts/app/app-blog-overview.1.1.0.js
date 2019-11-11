@@ -244,11 +244,11 @@
                     , <?php echo $carno; ?>
                 ],
                 backgroundColor: [
-                    '#00ff9d',
-                    '#ff8300',
-                    '#00b5e9',
-                    '#fa4251',
-                    '#BA55D3'
+                    '#ffb3b3',
+                    '#ff6666',
+                    '#ff4d4d',
+                    '#ffe6e6',
+                    '#ff9999'
                 ]
             }],
             labels: ["PSVs", "Motorcycles", "Organizations", "Trucks", "Personal Cars"]
@@ -289,8 +289,8 @@
                 data: [ <?php echo $activeno; ?> , <?php echo $susno; ?>
                     ],
                 backgroundColor: [
-                    'rgba(0,123,255,0.9)',
-                    'rgba(0,123,255,0.1)'
+                    '#ffe6e6',
+                    '#ff9999'
                 ]
             }],
             labels: ["Active", "Suspended"]
