@@ -519,9 +519,9 @@ $lastnameTruck = $rowt['dlname'];
                         var ubdData = {
                             datasets: [{
                                 hoverBorderColor: '#ffffff',
-                                data: [ < ? php echo $psvno; ? > , < ? php echo $motorno; ? >
-                                    , < ? php echo $orgno; ? > , < ? php echo $truckno; ? >
-                                    , < ? php echo $carno; ? >
+                                data: [<?php echo $psvno; ?> , <?php echo $motorno; ?>
+                                    , <?php echo $orgno; ?> , <?php echo $truckno; ?>
+                                    , <?php echo $carno; ?>
                                 ],
                                 backgroundColor: [
                                     '#00ff9d',
@@ -566,7 +566,7 @@ $lastnameTruck = $rowt['dlname'];
                         var ubdData = {
                             datasets: [{
                                 hoverBorderColor: '#ffffff',
-                                data: [ < ? php echo $activeno; ? > , < ? php echo $susno; ? >
+                                data: [ <?php echo $activeno; ?> , <?php echo $susno; ?>
                                     ],
                                 backgroundColor: [
                                     'rgba(0,123,255,0.9)',
