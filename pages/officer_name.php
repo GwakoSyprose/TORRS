@@ -7,7 +7,9 @@ function getName($id){
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo 'Taken By '.$row["lname"]." ".$row["fname"];
+            echo "<i class='material-icons'>
+            check_circle
+            </i>".' '.'Taken By '.$row["lname"]." ".$row["fname"];
         }
     } else {
        echo "";

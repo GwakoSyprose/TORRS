@@ -77,8 +77,9 @@ $query=mysqli_query($link, "SELECT * FROM notifications WHERE region='$region'")
                                                             <td><?php echo $numPlate; ?></td>
                                                             <td><?php echo  $description;?></td>
                                                             <td><?php echo $phone; ?></td>
-                                                            <td><a  href="?respond=<?= $notfID;?>">                                                          
-                                                            <?=(($status == 0)?'Respond':''.getName($status));?>
+                                                            <td><a  href="?respond=<?= $notfID;?>"> 
+                                                            
+                                                             <?=(($status == 0)?"<i class='material-icons text-danger'>alarm</i>" .' '. '<a class="text-danger">Respond</a>':''.getName($status));?>
                                                             </a></td>
 
 

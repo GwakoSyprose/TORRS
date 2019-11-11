@@ -46,7 +46,7 @@ if (isset ($_POST['submit'])) {
       $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
       //Insert user into the database
       $sql = "INSERT INTO users (userID, fname, lname, password, rank, region, joined, domain, email)
-            VALUES ('$userID', '$fname', '$lname', '$hashedPwd','$rank','$region', '$date', '1', '$email')";
+            VALUES ('$userID', '$fname', '$lname', '$hashedPwd','$rank','$region', '$date', '0', '$email')";
       mysqli_query($link, $sql);
       echo "<script>";
           echo "swal('Good job!', 'Officer registered successfully', 'success')";

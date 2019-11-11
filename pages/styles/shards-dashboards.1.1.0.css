@@ -55,6 +55,7 @@ body {
 
 a {
   color: #007bff;
+  font-weight: 500;
   text-decoration: none; }
   a:hover {
     color: #0056b3;
