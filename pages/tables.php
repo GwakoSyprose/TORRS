@@ -89,9 +89,9 @@ include  ('../includes/connection.php');
                             $count=$result['offenceCount'];
                             $date=$result['regDate'];
                         ?>
-                                            <tr class="spacer"></tr>
+                                            
                                              <tr class="tr-shadow" data-toggle="modal" data-target="#centralModalWarning" onclick="detailsmodal(<?=$result['driverID']; ?>)" >
-
+                                                
                                                 <td id="id"><?php echo $id; ?></td>
                                                 <td id="name"><?php echo $dfname; ?></td>
 
@@ -103,7 +103,7 @@ include  ('../includes/connection.php');
                                                 <td id="date"><?php echo $date ?> </td>
 
                                                 <td>
-                                                    <div class="table-data-feature">
+                                                    <span class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top"
                                                             title="Send">
                                                             <i class="zmdi zmdi-mail-send"></i>
@@ -120,7 +120,7 @@ include  ('../includes/connection.php');
                                                             title="More">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
-                                                    </div>
+                                                    </span>
                                                 </td>
                                                 <?php endwhile; ?>
 
@@ -151,9 +151,8 @@ include  ('../includes/connection.php');
                                                 <th>Last Name</th>
                                                 <th>Licence No</th>
                                                 <th>Offence Count</th>
-
-                                                <th>Registration Date</th>
-                                                <th></th>
+                                              <th>Registration Date</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -181,7 +180,7 @@ include  ('../includes/connection.php');
                                                 <td id="date"><?php echo $date ?> </td>
 
                                                 <td>
-                                                    <div class="table-data-feature">
+                                                    <span class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top"
                                                             title="Send">
                                                             <i class="zmdi zmdi-mail-send"></i>
@@ -198,7 +197,7 @@ include  ('../includes/connection.php');
                                                             title="More">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
-                                                    </div>
+                                                    </span>
                                                 </td>
                                                 <?php endwhile; ?>
 
