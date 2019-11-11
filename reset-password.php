@@ -25,7 +25,7 @@ if (!$email) {
   $key = md5($email);
   $addKey = substr(md5(uniqid(rand(),1)),3,10);
   $key = $key . $addKey;
-  $url = 'http://'.$_SERVER['SERVER_NAME'].':8080/TORS2/changepass.php?key='.$key.'&email='.$email.'&action=reset';
+  $url = 'http://'.$_SERVER['SERVER_NAME'].':8080/TORS/changepass.php?key='.$key.'&email='.$email.'&action=reset';
 // Insert Temp Table
 mysqli_query($link,
 "INSERT INTO `password_reset_temp` (`email`, `key`, `expDate`)
