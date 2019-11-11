@@ -42,6 +42,7 @@ if(isset($_POST['submit'])) {
              }elseif ($_SESSION['domain'] == 0)
              {
                   header("Location: pages/homepage.php?loggedIn=".$_SESSION['userID']);
+                  
              }
         
         } else {
