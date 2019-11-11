@@ -4,6 +4,7 @@
     include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/adminsidenav.php';
 
     include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/head.php'; 
+    require '../checkadmin.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/navbar.php';
 
 $sql="SELECT * FROM offence_categories;";

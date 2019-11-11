@@ -1,6 +1,5 @@
 <?php
 include('connection.php');
-
 $sql="SELECT * FROM types";
 $pquery=$link->query($sql);
 ?>
@@ -30,7 +29,7 @@ $pquery=$link->query($sql);
                 aria-label="Search">
         </div>
     </form>
-    <div class="nav-wrapper" style="background-image:url('../pages/images/bg.png');">
+    <div class="nav-wrapper" style="background-color:#262626;">
         <ul class="nav flex-column" style="border: none;">
             <li class="nav-item text-center " style="background-color: transparent;">
                 <a class="nav-link text-white" href="homepage.php">
@@ -55,10 +54,9 @@ $pquery=$link->query($sql);
                 <a class="nav-link" href="incidences.php">
 
                     <button class="btn btn-secondary col text-center">INCIDENCES</button>
-
                 </a>
             </li>
-            >
+            
 
 
         </ul>

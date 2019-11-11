@@ -62,9 +62,9 @@ include  ('../includes/connection.php');
                                                 <th>Last Name</th>
                                                 <th>Licence No</th>
                                                 <th>Offence Count</th>
-
                                                 <th>Registration Date</th>
-                                                <th></th>
+                                                <th>Actions</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -79,7 +79,7 @@ include  ('../includes/connection.php');
                             $date=$result['regDate'];
                         ?>
                                             <tr class="spacer"></tr>
-                                            <tr class="tr-shadow" data-href="viewdriver.php?pid=<?=$id; ?>">
+                                             <tr class="tr-shadow" data-toggle="modal" data-target="#centralModalWarning" onclick="detailsmodal(<?=$result['driverID']; ?>)" >
 
                                                 <td id="id"><?php echo $id; ?></td>
                                                 <td id="name"><?php echo $dfname; ?></td>
@@ -157,7 +157,7 @@ include  ('../includes/connection.php');
                             $date=$result['regDate'];
                         ?>
                                             <tr class="spacer"></tr>
-                                            <tr class="tr-shadow" data-href="viewdriver.php?pid=<?=$id; ?>">
+                                            <tr class="tr-shadow" data-toggle="modal" data-target="#centralModalWarning" onclick="detailsmodal(<?=$result['driverID']; ?>)" >
 
                                                 <td id="id"><?php echo $id; ?></td>
                                                 <td id="name"><?php echo $dfname; ?></td>
@@ -209,6 +209,28 @@ include  ('../includes/connection.php');
 
 
                     </div>
+                    
+                    <script>
+
+//ajax call,send JSON file
+function detailsmodal(id){
+ var data={"id" : id};//setting object data and passing id 
+ jQuery.ajax({
+ 	url: '/TORS/pages/viewmodal.php',
+ 	method: "post",
+ 	data: data,
+ 	success: function(data){
+ 		jQuery('body').append(data); //add html from detailsmodal page
+ 		jQuery ('#centralModalWarning').modal('toggle') //select details modal and open/toggle
+
+ 	},
+ 	error: function(){
+ 		alert("something went wrong!")
+ 	}
+ });
+
+}
+</script>
                     <script type="text/javascript">
                     $(document).ready(function() {
                         $('#active_drivers').DataTable();

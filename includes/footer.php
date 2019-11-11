@@ -109,7 +109,11 @@ setInterval(function(){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="scripts/extras.1.1.0.min.js"></script>
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
+<<<<<<< HEAD
+   
+=======
     <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
+>>>>>>> origin/master
 <script src="../datatables/jQuery-3.3.1/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="../datatables/DataTables-1.10.18/js/jquery.dataTables.js" type="text/javascript"></script>
 <script type="text/javascript" src="../js/inputmask/jquery.inputmask.js"></script>

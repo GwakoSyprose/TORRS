@@ -1,10 +1,11 @@
 <?php 
-    include $_SERVER['DOCUMENT_ROOT'] . '/TORS2/includes/connection.php'; 
+    include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/connection.php'; 
 
-    include $_SERVER['DOCUMENT_ROOT'] . '/TORS2/includes/adminsidenav.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/adminsidenav.php';
 
     include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/head.php'; 
-    include $_SERVER['DOCUMENT_ROOT'] . '/TORS2/includes/navbar.php';
+    require '../checkadmin.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/TORS/includes/navbar.php';
 
 if (isset ($_POST['submit'])) {
 
@@ -13,7 +14,7 @@ if (isset ($_POST['submit'])) {
    $lname = mysqli_real_escape_string($link, $_POST['lname']);
    $password = mysqli_real_escape_string($link, $_POST['password']);
    $rank = mysqli_real_escape_string($link, $_POST['rank']);
-    $region = mysqli_real_escape_string($link, $_POST['region']);
+    $station = mysqli_real_escape_string($link, $_POST['station']);
    $date = mysqli_real_escape_string($link, $_POST['regDate']);
     $email = mysqli_real_escape_string($link, $_POST['email']);
   
@@ -44,8 +45,8 @@ if (isset ($_POST['submit'])) {
       //hashing the password
       $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
       //Insert user into the database
-      $sql = "INSERT INTO users (userID, fname, lname, password, rank, region, joined, domain, email)
-            VALUES ('$userID', '$fname', '$lname', '$hashedPwd','$rank','$region', '$date', '1', '$email')";
+      $sql = "INSERT INTO users (userID, fname, lname, password, rank, stationID, joined, domain, email)
+            VALUES ('$userID', '$fname', '$lname', '$hashedPwd','$rank','$station', '$date', '0', '$email')";
       mysqli_query($link, $sql);
       echo "<script>";
           echo "swal('Good job!', 'Officer registered successfully', 'success')";
@@ -116,7 +117,30 @@ if (isset ($_POST['submit'])) {
                                                             <input type="password" class="form-control" name="password" placeholder="password" required> </div>
                                                          <div class="form-group col-md-12">
                                                             <label for="Region">Region</label>
-                                                            <input type="text" class="form-control" name="region" placeholder="region" required> </div>
+                                                             
+         <select name="station" class="form-control" required >
+           <option disabled selected>Select Station</option>
+          <?php 
+        require_once $_SERVER['DOCUMENT_ROOT'].'/tors/includes/connection.php';
+
+        $sql = "SELECT * FROM stations;";
+        $result = $link->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                echo  '<option value="'.$row["stationID"].'" >'.$row["stationName"].'</option>';
+            }
+        } else {
+
+        }
+          ?>
+        </select>
+      </div>
+
+
+
+
                                                         <div class="form-group col-md-6">
                                                             <label for="Rank">Rank</label>
 
