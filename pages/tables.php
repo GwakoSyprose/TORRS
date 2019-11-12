@@ -25,7 +25,8 @@ include  ('../includes/connection.php');
                     <div class="page-header row no-gutters py-4">
                         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                             <span class="text-uppercase page-subtitle">Overview</span>
-                            <h6 class="page-title"><?php 
+                            <h6 class="page-title">
+                            <?php 
                             if($typeid==1){
                                 echo "PSV";
                             }elseif($typeid==2){
@@ -36,7 +37,8 @@ include  ('../includes/connection.php');
                                 echo "MOTORCYCLES";
                             }elseif($typeid==5){
                                 echo "TRUCKS";
-                            }?> </h6>
+                            }?> 
+                            </h6>
 
                         </div>
                     </div>
