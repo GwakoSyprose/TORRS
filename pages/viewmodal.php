@@ -1,9 +1,8 @@
 <?php
-session_start();
-require_once('../includes/connection.php');
-?>
 
-<?php
+require_once('../includes/connection.php');
+include ('../includes/head.php');
+
 $id= $_POST['id'];//getting the id
 $id= (int)$id;   //type casting to interger
 $sql= "SELECT * FROM drivers WHERE driverID='$id'";
@@ -21,9 +20,9 @@ $driver= mysqli_fetch_assoc($result);
         <div class="modal-content">
             <!--Header-->
             <div class="modal-header">
-                <p class="heading lead">Modal Warning</p>
+                <h6 class="heading lead">Drivers Details</h6>
 
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" onclick="javascript:window.location.reload()" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="white-text">&times;</span>
                 </button>
             </div>
@@ -77,7 +76,7 @@ $driver= mysqli_fetch_assoc($result);
                         </table>
                     </div>
                 </div>
-            </div>s
+            </div>
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
@@ -85,7 +84,7 @@ $driver= mysqli_fetch_assoc($result);
                     <button class="btn btn-sm  btn-outline-danger col text-center " >RECORD OFFENSE</button>
                 </a>
                  <a class="nav-link">
-                    <button class="btn btn-sm  btn-outline-info col text-center " data-dismiss="modal">CLOSE</button>
+                    <button class="btn btn-sm  btn-outline-info col text-center"  data-dismiss="modal" onclick="javascript:window.location.reload()">CLOSE</button>
                 </a>
              
             </div>
@@ -93,24 +92,8 @@ $driver= mysqli_fetch_assoc($result);
         <!--/.Content-->
     </div>
 </div>
- <script>
-
-//ajax call,send JSON file
-function recordOffence(id){
- var data={"id" : id};//setting object data and passing id 
- jQuery.ajax({
- 	url: '/TORS/pages/recordoffence.php',
- 	method: "post",
- 	data: data,
- 	success: function(data){
- 		jQuery('body').append(data); //add html from detailsmodal page
- 		jQuery ('#centralModalWarning').modal('toggle') //select details modal and open/toggle
-
- 	},
- 	error: function(){
- 		alert("something went wrong!")
- 	}
- });
-
-}
+<script>
+$('#centralModalWarning').on('hidden', function () {
+  document.location.reload();
+})
 </script>

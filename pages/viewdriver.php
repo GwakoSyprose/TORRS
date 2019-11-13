@@ -94,7 +94,7 @@ WHERE d.driverID = '$id' ";
 
 </tr>
 
-<tr>
+<tr >
 
     <td class="font-weight-bold">National ID</td>
     <td>'.$row["driverID"].'</td>
@@ -157,10 +157,13 @@ WHERE d.driverID = '$id' ";
       $obj_pdf->SetFont('helvetica', '', 11);  
       $obj_pdf->AddPage();  
       $content = '';  
-      $content .= '<table>  
+      $content .= '
+      
+                                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example" style="font-size: 11px;left:40%; border-spacing: 5px;" align="left">
       
       ';  
-      $content .= fetch_data();  
+      $content .= fetch_data();
+     
       $content .= '</table>'; 
      
       $obj_pdf->writeHTML($content); 

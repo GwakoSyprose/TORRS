@@ -104,16 +104,12 @@ setInterval(function(){
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="../charts/Chart.min.js"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="scripts/extras.1.1.0.min.js"></script>
     <script src="scripts/shards-dashboards.1.1.0.min.js"></script>
-<<<<<<< HEAD
-   
-=======
     <script src="scripts/app/app-blog-overview.1.1.0.js"></script>
->>>>>>> origin/master
 <script src="../datatables/jQuery-3.3.1/jquery-3.3.1.js" type="text/javascript"></script>
 <script src="../datatables/DataTables-1.10.18/js/jquery.dataTables.js" type="text/javascript"></script>
 <script type="text/javascript" src="../js/inputmask/jquery.inputmask.js"></script>
